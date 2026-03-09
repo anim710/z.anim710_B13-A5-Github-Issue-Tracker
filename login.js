@@ -6,7 +6,7 @@ document.getElementById('sign-in-btn').addEventListener('click', function(event)
     const passWord=document.getElementById('password').value;
     // const convertedPinNumber=parseInt(pinNumber)
     // console.log(convertedPinNumber);
-    if(userName.length===11){
+    if(userName=== "admin"){
         if(passWord=== "admin123"){
              alert("Login Successful");
             window.location.href="./main.html";
