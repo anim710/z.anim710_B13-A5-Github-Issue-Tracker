@@ -12,59 +12,100 @@
        <!-- icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+   <!-- <style>
+        * { font-family: 'Geist', sans-serif; }
+
+        /* card top border */
+        .card-open   { border-top: 3px solid #00A96E; }
+        .card-closed { border-top: 3px solid #a855f7; }
+
+        /* spinner */
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .spinner {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 4px solid #e2e8f0;
+            border-top-color: #4A00FF;
+            animation: spin 0.75s linear infinite;
+        }
+
+        /* card entrance */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .card-anim { animation: fadeUp 0.3s ease both; }
+
+        /* search focus */
+        #search-input:focus {
+            outline: none;
+            border-color: #4A00FF;
+            box-shadow: 0 0 0 3px rgba(74,0,255,0.12);
+        }
+
+        /* modal animation */
+        @keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: scale(0.96) translateY(14px); } to { opacity: 1; transform: none; } }
+        #modal-overlay             { animation: fadeIn  0.18s ease both; }
+        #modal-overlay #modal-card { animation: slideUp 0.24s cubic-bezier(0.16,1,0.3,1) both; }
+
+        /* responsive grid */
+        @media (max-width: 1100px) { #issues-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width:  780px) { #issues-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width:  500px) { #issues-grid { grid-template-columns: repeat(1, 1fr); } }
+    </style> -->
 <body>
 
     <!--  NAVBAR -->
-    <nav class="bg-[#FFFFFF] px-6 h-14 flex items-center justify-between  top-0  border-b border-gray-200">
+    <!-- <nav class="bg-[#FFFFFF] px-6 h-14 flex items-center justify-between  top-0  border-b border-gray-200"> -->
 
       <!-- Brand -->
-      <div class="flex items-center gap-2.5">
+      <!-- <div class="flex items-center gap-2.5">
         <img src="./assets/github-logo.png" alt="" class="w-7 h-7 rounded-full">
         <span class="text-black font-semibold text-[24px] tracking-tight">GitHub Issues Tracker</span>
-      </div>
+      </div> -->
 
       <!-- Right: Search + New Issue -->
-      <div class="flex items-center gap-2.5">
+      <!-- <div class="flex items-center gap-2.5"> -->
         <!-- Search -->
-        <div class="relative">
-          <!-- <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-          </svg> -->
-          <i class="fa-solid fa-magnifying-glass absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+        <!-- <div class="relative"> -->
+          
+          <!-- <i class="fa-solid fa-magnifying-glass absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
           <input
             id="search-input"
             type="text"
             placeholder="Search issues..."
             class="bg-white border border-gray-300 text-black text-sm placeholder-slate-400 rounded-md pl-8 pr-3 py-1.5 w-52 transition-all"
           />
-        </div>
+        </div> -->
 
         <!-- onclick="alert('New Issue form coming soon!')" -->
         <!-- New Issue -->
-        <button
+        <!-- <button
           
           class="flex items-center gap-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-3 py-1.5 rounded-md transition-colors cursor-pointer"
-        >
-          <!-- <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg> -->
-           <i class="fa-solid fa-plus w-[13px] h-[13px] "></i>
+        > -->
+          
+           <!-- <i class="fa-solid fa-plus w-[13px] h-[13px] "></i>
           New Issue
-        </button>
+        </button> -->
 
-        </div>
-        </nav>
+        <!-- </div>
+        </nav> -->
 
         <!--MAIN CONTENT-->
-    <main class="max-w-[1320px] mx-auto px-5 py-7 pb-16">
+    <!-- <main class="max-w-[1320px] mx-auto px-5 py-7 pb-16"> -->
 
       <!-- Tabs -->
-     <div class="bg-white border border-slate-200 rounded-lg p-3 flex gap-2 shadow-sm mb-4">
+     <!-- <div class="bg-white border border-slate-200 rounded-lg p-3 flex gap-2 shadow-sm mb-4">
     <button id="all-filter-btn" onclick="toggleStyle('all-filter-btn')" class="px-8 py-2 rounded-md text-xs font-medium text-white bg-[#4A00FF]" >All</button>
       <button id="open-filter-btn" onclick="toggleStyle('open-filter-btn')" class="px-6 py-2 rounded-md text-xs font-medium text-gray-500 bg-white border border-gray-200">Open</button>
       <button id="closed-filter-btn" onclick="toggleStyle('closed-filter-btn')" class="px-6 py-2 rounded-md text-xs font-medium text-gray-500 bg-white border border-gray-200">Closed</button>
-  </div>
+  </div> -->
 
       <!-- Meta bar -->
-      <div class="flex items-center justify-between bg-white border border-slate-200 rounded-xl px-5 py-4 mb-5 shadow-sm">
+      <!-- <div class="flex items-center justify-between bg-white border border-slate-200 rounded-xl px-5 py-4 mb-5 shadow-sm">
         <div class="flex items-center gap-3">
           
           <img src="./assets/Aperture.png" alt="" class="border border-purple-100 rounded-full p-1 bg-purple-100">
@@ -81,7 +122,7 @@
             <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> Closed
           </span>
         </div>
-      </div>
+      </div> -->
 
       <!-- Spinner -->
       <!-- <div id="spinner" class="flex justify-center py-20">
@@ -113,8 +154,222 @@
         max-[500px]:grid-cols-1">
       </div> -->
 
+
+
+
+        <!-- <section id="issues-container" class="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
+  
+  <div class="card bg-base-100 shadow-sm border-t-4 border-green-500 rounded-lg">
+    <div class="card-body p-5">
+      
+      <div class="flex justify-between items-center mb-2">
+       <img src="./assets/Closed- Status .png" alt="">
+        <span class="badge bg-red-100 text-red-500 font-bold border-none px-3 py-3">High</span>
+      </div>
+      
+      <h2 class="card-title text-[16px] leading-tight">Fix navigation menu on mobile devices</h2>
+      <p class="text-gray-500 text-sm mt-2">The navigation menu doesn't collapse properly on mobile devices...</p>
+      
+      <div class="flex gap-2 mt-4">
+         <span class="badge bg-red-50 text-red-500 border-red-200 font-bold p-3">
+            <i class="fa-solid fa-bug mr-1"></i> Bug
+         </span>
+         <span class="badge bg-yellow-50 text-yellow-600 border-yellow-200 font-bold p-3">
+            <i class="fa-solid fa-life-ring mr-1"></i> Help Wanted
+         </span>
+      </div>
+    </div>
+    
+    <div class="bg-gray-50 p-4 border-t border-gray-100 text-sm text-gray-500 rounded-b-lg">
+      <p>#1 by john_doe</p>
+      <p>1/15/2024</p>
+    </div>
+  </div>
+
+  <div class="card bg-base-100 shadow-sm border-t-4 border-green-500 rounded-lg">
+    <div class="card-body p-5">
+      <div class="flex justify-between items-center mb-2">
+        <img src="./assets/Open-Status.png" alt="">
+        <span class="badge bg-yellow-100 text-yellow-600 font-bold border-none px-3 py-3">Medium</span>
+      </div>
+      <h2 class="card-title text-[16px] leading-tight">Fix navigation menu on mobile devices</h2>
+      <p class="text-gray-500 text-sm mt-2">The navigation menu doesn't collapse properly on mobile devices...</p>
+      <div class="flex gap-2 mt-4">
+         <span class="badge bg-red-50 text-red-500 border-red-200 font-bold p-3">
+            <i class="fa-solid fa-bug mr-1"></i> Bug
+         </span>
+         <span class="badge bg-yellow-50 text-yellow-600 border-yellow-200 font-bold p-3">
+            <i class="fa-solid fa-life-ring mr-1"></i> Help Wanted
+         </span>
+      </div>
+    </div>
+    <div class="bg-gray-50 p-4 border-t border-gray-100 text-sm text-gray-500 rounded-b-lg">
+      <p>#2 by jane_doe</p>
+      <p>1/15/2024</p>
+    </div>
+  </div>
+
+</section> -->
+
+    <!-- </main> -->
+
+
+
+    <body class="bg-[#f1f5f9] min-h-screen">
+
+    <!--  NAVBAR -->
+    <nav class="bg-[#FFFFFF] px-6 h-14 flex items-center justify-between sticky top-0 z-50 border-b border-gray-200 shadow-sm">
+
+        <!-- Brand -->
+        <div class="flex items-center gap-2.5">
+            <img src="./assets/github-logo.png" alt="" class="w-7 h-7 rounded-full">
+            <span class="text-black font-semibold text-[24px] tracking-tight">GitHub Issues Tracker</span>
+        </div>
+
+        <!-- Right: Search + New Issue -->
+        <div class="flex items-center gap-2.5">
+
+            <!-- Search -->
+            <div class="relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+                <input
+                    id="search-input"
+                    type="text"
+                    placeholder="Search issues..."
+                    class="bg-white border border-gray-300 text-black text-sm placeholder-slate-400 rounded-md pl-8 pr-3 py-1.5 w-52 transition-all"
+                />
+            </div>
+
+            <!-- New Issue -->
+            <button class="flex items-center gap-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-3 py-1.5 rounded-md transition-colors cursor-pointer">
+                <i class="fa-solid fa-plus w-[13px] h-[13px]"></i>
+                New Issue
+            </button>
+
+            
+            
+
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-[1320px] mx-auto px-5 py-7 pb-16">
+
+        <!-- Tabs -->
+        <div class="bg-white border border-slate-200 rounded-lg p-3 flex gap-2 shadow-sm mb-4">
+            <button id="all-filter-btn"    onclick="toggleStyle('all-filter-btn')"    class="px-8 py-2 rounded-md text-xs font-medium text-white bg-[#4A00FF]">All</button>
+            <button id="open-filter-btn"   onclick="toggleStyle('open-filter-btn')"   class="px-6 py-2 rounded-md text-xs font-medium text-gray-500 bg-white border border-gray-200">Open</button>
+            <button id="closed-filter-btn" onclick="toggleStyle('closed-filter-btn')" class="px-6 py-2 rounded-md text-xs font-medium text-gray-500 bg-white border border-gray-200">Closed</button>
+        </div>
+
+        <!-- Meta bar -->
+        <div class="flex items-center justify-between bg-white border border-slate-200 rounded-xl px-5 py-4 mb-5 shadow-sm">
+            <div class="flex items-center gap-3">
+                <img src="./assets/Aperture.png" alt="" class="border border-purple-100 rounded-full p-1 bg-purple-100">
+                <div>
+                    <p class="font-bold text-slate-900 text-[0.95rem]" id="issue-count">0 Issues</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Track and manage your project issues</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-5 text-sm font-medium text-slate-500">
+                <span class="flex items-center gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#00A96E]"></span> Open
+                </span>
+                <span class="flex items-center gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> Closed
+                </span>
+            </div>
+        </div>
+
+        <!-- Spinner -->
+        <div id="spinner" class="flex justify-center py-20">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- Error state -->
+        <div id="error-state" class="hidden text-center py-20 text-slate-400">
+            <svg class="mx-auto mb-3" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            <p class="text-slate-600 font-semibold text-lg">Failed to load issues</p>
+            <p class="text-sm mt-1" id="error-msg"></p>
+        </div>
+
+        <!-- Empty state -->
+        <div id="empty-state" class="hidden text-center py-20 text-slate-400">
+            <svg class="mx-auto mb-3" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            <p class="text-slate-600 font-semibold text-lg">No issues found</p>
+            <p class="text-sm mt-1">Try a different search or filter</p>
+        </div>
+
+        <!-- Issues Grid -->
+        <div id="issues-grid" class="hidden grid grid-cols-4 gap-4
+            max-[1100px]:grid-cols-3
+            max-[780px]:grid-cols-2
+            max-[500px]:grid-cols-1">
+        </div>
+
     </main>
-    <script src="toggle.js"></script>
-    <script src="login.js"></script>
+
+    <!-- MODAL -->
+    <div id="modal-overlay" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[999] flex items-center justify-center p-5">
+        <div id="modal-card" class="bg-white rounded-2xl w-full max-w-[500px] max-h-[90vh] overflow-y-auto shadow-2xl relative">
+
+            <!-- close X -->
+            <button id="modal-close-x" class="absolute top-3.5 right-3.5 w-8 h-8 flex items-center justify-center bg-slate-100 hover:bg-red-50 hover:text-red-500 border border-slate-200 hover:border-red-200 rounded-md transition-colors cursor-pointer z-10">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+
+            <!-- header -->
+            <div class="px-6 pt-6">
+                <div class="flex items-center gap-2.5 mb-2.5">
+                    <span id="modal-badge" class="text-[0.7rem] font-bold px-3 py-1 rounded-full"></span>
+                    <span id="modal-meta"  class="text-[0.74rem] text-slate-400 font-mono"></span>
+                </div>
+                <h2  id="modal-title"  class="text-[1.08rem] font-bold text-slate-900 leading-snug pr-8 mb-3"></h2>
+                <div id="modal-labels" class="flex flex-wrap gap-1.5 mb-5"></div>
+            </div>
+
+            <!-- body -->
+            <div class="px-6 pb-4">
+                <p id="modal-desc" class="text-sm text-slate-600 leading-relaxed bg-slate-50 border border-slate-100 rounded-xl p-4 mb-5"></p>
+                <div class="grid grid-cols-2 gap-5">
+                    <div>
+                        <p class="text-[0.65rem] font-bold text-slate-400 uppercase tracking-widest mb-1">Assignee</p>
+                        <p id="modal-assignee" class="text-sm font-semibold text-slate-800 font-mono"></p>
+                    </div>
+                    <div>
+                        <p class="text-[0.65rem] font-bold text-slate-400 uppercase tracking-widest mb-1">Priority</p>
+                        <span id="modal-priority" class="text-[0.65rem] font-bold px-2.5 py-1 rounded-full"></span>
+                    </div>
+                    <div>
+                        <p class="text-[0.65rem] font-bold text-slate-400 uppercase tracking-widest mb-1">Status</p>
+                        <p id="modal-status" class="text-sm font-semibold text-slate-800 font-mono capitalize"></p>
+                    </div>
+                    <div>
+                        <p class="text-[0.65rem] font-bold text-slate-400 uppercase tracking-widest mb-1">Created At</p>
+                        <p id="modal-created" class="text-sm font-semibold text-slate-800 font-mono"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- footer -->
+            <div class="px-6 py-4 border-t border-slate-100 flex justify-end">
+                <button id="modal-close-btn" class="bg-[#4A00FF] hover:bg-indigo-700 text-white text-sm font-semibold px-6 py-2.5 rounded-lg cursor-pointer transition-colors">
+                    Close
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <script src="./toggle.js"></script>
+    <script src="./login.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>

@@ -1,7 +1,10 @@
+console.log("toggle.js loaded!");
 
 const allFilterBtn = document.getElementById('all-filter-btn')
 const openFilterBtn = document.getElementById('open-filter-btn')
 const closedFilterBtn = document.getElementById('closed-filter-btn')
+
+let currentTab = "all"; // this is read by main.js to filter issues
 
 function toggleStyle(id) {
     // adding gray bg for all
@@ -14,33 +17,21 @@ function toggleStyle(id) {
     openFilterBtn.classList.remove('bg-[#4A00FF]', 'text-white')
     closedFilterBtn.classList.remove('bg-[#4A00FF]', 'text-white')
 
+    const selected = document.getElementById(id)
+
     // console.log(id);
-    const selected = document.getElementById(id)//this is the button that clicked for filter
 
-    currentStatus = id
-    console.log(currentStatus);
-    // console.log(selected);
-
-    // adding black bg for current button
+    // adding blue bg for current button
     selected.classList.remove('bg-white', 'text-gray-500', 'border', 'border-gray-200')
     selected.classList.add('bg-[#4A00FF]', 'text-white')
-    // step 1 finish
 
-    // show and hidden particular section
-    // step 4 start
-    // filtering while clicking the filter button (All, Interview, Rejected)
-    // if (id == 'interview-filter-btn') {
-    //     allCardSection.classList.add('hidden');
-    //     filterSection.classList.remove('hidden')
-    //     renderInterview()
-    // } else if (id == 'all-filter-btn') {
-    //     allCardSection.classList.remove('hidden');
-    //     filterSection.classList.add('hidden')
-    // } else if (id == 'rejected-filter-btn') {
-    //     allCardSection.classList.add('hidden');
-    //     filterSection.classList.remove('hidden')
-    //     renderRejected()
-    // }
-    // // Update job count after filter change
-    // updateJobCount()
+    // update currentTab so main.js knows which tab is active
+    if(id === 'all-filter-btn')    currentTab = "all";
+    if(id === 'open-filter-btn')   currentTab = "open";
+    if(id === 'closed-filter-btn') currentTab = "closed";
+
+    // re-render cards with new tab filter
+    if(typeof allIssues !== "undefined") {
+        displayIssues(allIssues);
+    }
 }
